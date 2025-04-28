@@ -14,6 +14,9 @@ class Producat(models.Model):
     
     categories = models.ForeignKey('categorie.Categorie', on_delete=models.CASCADE, related_name='categories', blank=True, null=True)
     image = models.ManyToManyField('ProducatImage', blank=True, related_name='producat_images')
+    is_verified = models.BooleanField(default=False)
+    reason = models.TextField(blank=True, null=True)
+    
     
     
 
