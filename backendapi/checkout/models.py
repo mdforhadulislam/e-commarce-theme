@@ -6,7 +6,6 @@ class Checkout(models.Model):
 
     total_price = models.DecimalField(max_digits=10, decimal_places=2)
     checkout_date = models.DateTimeField(auto_now_add=True)
-    
     shipping_city = models.CharField(max_length=100, blank=True, null=True)
     shipping_state = models.CharField(max_length=100, blank=True, null=True)
     shipping_country = models.CharField(max_length=100, blank=True, null=True)
