@@ -13,6 +13,7 @@ from product.views import *
 from review.views import *
 from shipping.views import *
 from store.views import *
+from groupsystem.views import *
 
 
 router = routers.DefaultRouter()
@@ -28,6 +29,10 @@ router.register(r'product/image', ProductImageViewSet , basename='product-image'
 router.register(r'reviews', ReviewViewSet , basename='reviews')
 router.register(r'shipping', ShippingViewSet , basename='shipping')
 router.register(r'store', StoreViewSet , basename='store')
+router.register(r'group', GroupsForStorViewSet)
+router.register(r'group/post', GroupPostViewSet)
+router.register(r'group/comment', GroupCommentViewSet)
+router.register(r'group/image', GroupImageViewSet)
 
  
 router.register(r'land/logos', LogoViewSet)
