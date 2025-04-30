@@ -1,6 +1,6 @@
 from django.db import models
 
-
+# Create your models here.
 class Shipping(models.Model):
     checkout_order = models.ForeignKey('checkout.Checkout', on_delete=models.CASCADE, related_name='shipping')
     hand_over_courier_name = models.CharField(max_length=255, null=True, blank=True)

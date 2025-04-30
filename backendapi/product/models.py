@@ -1,6 +1,6 @@
 from django.db import models
 
-class Producat(models.Model):
+class Product(models.Model):
     name = models.CharField(max_length=100, unique=True)
     
     title1 = models.CharField(max_length=100, blank=True, null=True)
@@ -12,8 +12,10 @@ class Producat(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     
-    categories = models.ForeignKey('categorie.Categorie', on_delete=models.CASCADE, related_name='categories', blank=True, null=True)
-    image = models.ManyToManyField('ProducatImage', blank=True, related_name='producat_images')
+    store = models.ForeignKey('store.Store', on_delete=models.CASCADE, related_name='store')
+    
+    categories = models.ForeignKey('category.category', on_delete=models.CASCADE, related_name='category', blank=True, null=True)
+    image = models.ManyToManyField('ProductImage', blank=True, related_name='product_images')
     is_verified = models.BooleanField(default=False)
     reason = models.TextField(blank=True, null=True)
     
@@ -24,11 +26,11 @@ class Producat(models.Model):
         return self.name
 
 
-class ProducatImage(models.Model):
+class ProductImage(models.Model):
     name = models.CharField(max_length=100, unique=True)
-    image = models.ImageField(upload_to='producats/', blank=True, null=True)
+    image = models.ImageField(upload_to='products/', blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     
     def __str__(self):
-        return f"{self.name} - producat image"
+        return f"{self.name} - product image"

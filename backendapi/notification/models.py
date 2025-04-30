@@ -1,7 +1,7 @@
 from django.db import models
 
 class Notification(models.Model):
-    user = models.ForeignKey('user_api.CustomUser', on_delete=models.CASCADE, related_name='notifications')
+    user = models.ForeignKey('user.User', on_delete=models.CASCADE, related_name='notifications')
     title = models.CharField(max_length=255)
     message = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)

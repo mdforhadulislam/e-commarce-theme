@@ -2,7 +2,7 @@ from django.db import models
 
 
 class Checkout(models.Model):
-    user = models.ForeignKey('user_api.CustomUser', on_delete=models.CASCADE, related_name='checkouts')
+    user = models.ForeignKey('user.User', on_delete=models.CASCADE, related_name='checkouts')
 
     total_price = models.DecimalField(max_digits=10, decimal_places=2)
     checkout_date = models.DateTimeField(auto_now_add=True)
