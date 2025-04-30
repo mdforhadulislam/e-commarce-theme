@@ -1,3 +1,7 @@
-from django.shortcuts import render
+from rest_framework import viewsets
+from .models import Checkout
+from .serializers import CheckoutSerializer
 
-# Create your views here.
+class CheckoutViewSet(viewsets.ModelViewSet):
+    queryset = Checkout.objects.all()
+    serializer_class = CheckoutSerializer
