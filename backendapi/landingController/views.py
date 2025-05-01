@@ -41,3 +41,10 @@ class BlogDetailsViewSet(viewsets.ModelViewSet):
 class BlogViewSet(viewsets.ModelViewSet):
     queryset = Blog.objects.all()
     serializer_class = BlogSerializer
+    
+    
+
+class UserTrackViewSet(viewsets.ModelViewSet):
+    queryset = UserTrack.objects.all()
+    serializer_class = UserTrackSerializer
+    

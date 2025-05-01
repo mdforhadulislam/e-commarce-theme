@@ -12,4 +12,5 @@ admin.site.register(TermsAndConditions)
 admin.site.register(Faq)
 admin.site.register(BlogDeatils)
 admin.site.register(Blog)
+admin.site.register(UserTrack)
 

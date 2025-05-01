@@ -10,7 +10,7 @@ class Logo(models.Model):
 
     def __str__(self):
         return f"Logo {self.id} - {self.title}"
-    
+
 
 class FooterLogo(models.Model):
     footer_logo = models.ImageField(upload_to='footer_logos/')
@@ -133,3 +133,13 @@ class Blog(models.Model):
     def __str__(self):
         return f"Blog {self.id} - {self.title}"
     
+
+class UserTrack(models.Model):
+    name = models.CharField(max_length=255, blank=True, null=True)
+    ip_address = models.GenericIPAddressField(blank=True, null=True)
+    email = models.EmailField(blank=True, null=True)
+    phone = models.CharField(max_length=20, blank=True, null=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"User Track {self.name} - {self.phone} - {self.email} - {self.ip_address}"

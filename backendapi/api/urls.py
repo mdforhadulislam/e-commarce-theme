@@ -15,6 +15,7 @@ from shipping.views import *
 from store.views import *
 
 
+
 router = routers.DefaultRouter()
 router.register(r'user', Accounts, basename='user-accounts')
 router.register(r'category', CategoryViewSet, basename='category')
@@ -29,6 +30,7 @@ router.register(r'reviews', ReviewViewSet , basename='reviews')
 router.register(r'shipping', ShippingViewSet , basename='shipping')
 router.register(r'store', StoreViewSet , basename='store')
 
+
  
 router.register(r'land/logos', LogoViewSet)
 router.register(r'land/footer-logos', FooterLogoViewSet)
@@ -40,6 +42,7 @@ router.register(r'land/terms-and-conditions', TermsAndConditionsViewSet)
 router.register(r'land/faqs', FaqViewSet)
 router.register(r'land/blog-details', BlogDetailsViewSet)
 router.register(r'land/blogs', BlogViewSet)
+router.register(r'land/user-track', UserTrackViewSet, basename='user-tracks')
 
 
 urlpatterns = [

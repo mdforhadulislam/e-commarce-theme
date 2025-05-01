@@ -50,3 +50,9 @@ class BlogSerializer(serializers.ModelSerializer):
     class Meta:
         model = Blog
         fields = '__all__'
+        
+
+class UserTrackSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = UserTrack
+        fields = '__all__'
