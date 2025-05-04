@@ -2,7 +2,14 @@ import React from 'react'
 
 const FooterBar = () => {
   return (
-    <div>FooterBar</div>
+    <footer className='w-full h-[300px] bg-defult'>
+      
+
+
+
+
+
+    </footer>
   )
 }
 
