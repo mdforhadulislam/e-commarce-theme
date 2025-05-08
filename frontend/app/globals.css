@@ -20,6 +20,17 @@
   }
 }
 
+@media (min-width: 768px) {
+  .md\:h-\[650px\] {
+      height: 650px;
+  }
+}
+
+@media (min-width: 768px) {
+  .md\:h-full {
+      height: 100%;
+  }
+}
 
 @layer base {
   :root {

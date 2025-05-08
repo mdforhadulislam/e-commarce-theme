@@ -20,6 +20,7 @@ from groupsystem.views import *
 router = routers.DefaultRouter()
 router.register(r'user', Accounts, basename='user-accounts')
 router.register(r'category', CategoryViewSet, basename='category')
+router.register(r'subcategory', SubCategoryViewSet, basename='subcategory')
 router.register(r'checkout', CheckoutViewSet, basename='checkout')
 router.register(r'coupon', CouponViewSet, basename='coupon')
 router.register(r'giftcard', GiftCardViewSet, basename='giftcard')

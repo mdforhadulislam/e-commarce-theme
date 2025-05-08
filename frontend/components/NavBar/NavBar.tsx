@@ -345,11 +345,11 @@ const NavBar = () => {
       {/* Navigation Links */}
       <div className="w-full flex justify-left h-auto border-b border-b-gray-100 border-b-1">
         <NavigationMenu className="conrainer m-auto h-auto flex justify-start items-center p-1 ">
-          <NavigationMenuList className="w-full overflow-auto hiddenScrollBar border-b-1 border-b-gray-100 flex gap-2 justify-start">
+          <NavigationMenuList className="w-auto sm:w-full overflow-auto hiddenScrollBar border-b-1 border-b-gray-100 flex gap-1  justify-start">
             {navBar.map((item, index) => {
               if (item.name === "Order")
                 return (
-                  <NavigationMenuItem key={index}>
+                  <NavigationMenuItem key={index} className="hidden sm:block">
                     <Link href={item.link} legacyBehavior passHref>
                       <NavigationMenuLink
                         className={
@@ -364,11 +364,11 @@ const NavBar = () => {
 
               return (
                 <NavigationMenuItem key={index}>
-                  <NavigationMenuTrigger className="flex gap-2  dark:border-b-1 dark:border-b-[#121212] dark:hover:border-b-white">
+                  <NavigationMenuTrigger className="flex gap-1 px-2 sm:px-5 dark:border-b-1 dark:border-b-transparent dark:hover:border-b-white">
                     {item.icon} {item.name}
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
-                    <ul className="grid gap-3 p-6 w-[310px] h-[450px] sm:h-[600px] md:h-[750px] lg:h-auto  overflow-auto scrollbar sm:w-[400px] md:w-[500px] lg:grid-cols-[.75fr_1fr]">
+                    <ul className={`grid gap-3 p-6 w-[310px] h-[450px] sm:h-[550px]  ${item.name == "Home" ? "md:h-full" :"md:h-[600px]"}  overflow-auto scrollbar sm:w-[400px] md:w-[600px] lg:grid-cols-[1fr_1fr]`}>
                       <li className="row-span-3">
                         <NavigationMenuLink asChild>
                           <a

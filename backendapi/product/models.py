@@ -8,18 +8,21 @@ class Product(models.Model):
     title2 = models.CharField(max_length=100, blank=True, null=True)
     description2 = models.TextField(blank=True, null=True)
     price = models.DecimalField(max_digits=10, decimal_places=2)
+    is_discount = models.BooleanField(default=False)
+    discount_price = models.DecimalField(max_digits=10, decimal_places=2, blank=True, null=True)
     stock = models.PositiveIntegerField(default=0)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+    is_new = models.BooleanField(default=True)
+    is_primium = models.BooleanField(default=False)
+    is_featured = models.BooleanField(default=False)
+    
     
     store = models.ForeignKey('store.Store', on_delete=models.CASCADE, related_name='store')
-    
-    categories = models.ForeignKey('category.category', on_delete=models.CASCADE, related_name='category', blank=True, null=True)
+    category = models.ForeignKey('category.SubCategory', on_delete=models.CASCADE, related_name='subcategory',)
     image = models.ManyToManyField('ProductImage', blank=True, related_name='product_images')
     is_verified = models.BooleanField(default=False)
     reason = models.TextField(blank=True, null=True)
-    
-    
     
 
     def __str__(self):
