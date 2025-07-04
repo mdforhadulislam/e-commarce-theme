@@ -11,7 +11,12 @@ const FooterLinks = {
     { title: 'Register As Team Member', links: '/' }
   ],
   Store: [
-    
+    { title: 'Blood Request', links: '/' },
+    { title: 'Donar Registration', links: '/' },
+    { title: 'Volunteer Registration', links: '/' },
+    { title: 'Team Member Registration', links: '/' },
+    { title: 'Blood Bank', links: '/' },
+    { title: 'Hospital', links: '/' }
   ],
   About: [
     { title: 'Service', links: '/' },
