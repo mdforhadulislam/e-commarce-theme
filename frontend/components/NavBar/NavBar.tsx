@@ -216,7 +216,7 @@ const NavBar = () => {
   const [showSarchResult, setShowSarchResult] = useState(false);
 
   return (
-    <div className="w-full h-auto p-2 pb-1 backdrop-blur-md bg-white/60 dark:bg-black/10 shadow-3xl dark:shadow-3xl fixed z-[90]">
+    <div className="w-full h-auto p-2 pb-1 backdrop-blur-md bg-white/60 dark:bg-black/10 shadow-3xl dark:shadow-3xl fixed z-[90] transtition-all duration-300 ease-in-out">
       <div className="w-full h-auto pb-2 sm:border-b-1 sm:border-b">
         <div className="container m-auto flex justify-between items-center ">
           <div className="w-[280px] h-auto pr-4">

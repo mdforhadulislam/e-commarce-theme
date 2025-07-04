@@ -26,32 +26,32 @@ const FooterLinks = {
       title: 'Facebook',
       links: 'https://www.facebook.com/dutypedia',
       icon: <Facebook />,
-      color: 'text-[#3b5998]'
+      color: 'text-white'
     },
     {
       title: 'Instagram',
       links: 'https://www.instagram.com/dutypedia',
       icon: <Instagram />,
-      color: 'text-[#e1306c]'
+      color: 'text-white'
     },
     {
       title: 'Twitter',
       links: 'https://twitter.com/dutypedia',
       icon: <Twitter />,
-      color: 'text-[#1da1f2]'
+      color: 'text-white'
     },
     {
       title: 'Linkedin',
       links: 'https://www.linkedin.com/company/dutypedia',
       icon: <Linkedin />,
-      color: 'text-[#0077b5]'
+      color: 'text-white'
     }
   ]
 };
 
 const FooterBar = () => {
   return (
-    <div className='w-full h-auto bg-defult'>
+    <div className='w-full h-auto bg-defult-secondary'>
       <footer className="container h-auto m-auto p-5 ">
       <div className="md:border-t py-16 text-[17px]  text-white hover:text-gray-100">
         {/* Mobile version */}
@@ -62,7 +62,7 @@ const FooterBar = () => {
                 <Link
                   key={idx}
                   href={item.links}
-                  className="block transition-colors duration-300 hover:text-[#ce1c34]"
+                  className="block transition-colors duration-300 "
                 >
                   {item.title}
                 </Link>
@@ -76,7 +76,7 @@ const FooterBar = () => {
                 <Link
                   key={idx}
                   href={item?.links}
-                  className="block transition-colors duration-300 hover:text-[#ce1c34]"
+                  className="block transition-colors duration-300 "
                 >
                   {item?.title}
                 </Link>
@@ -90,7 +90,7 @@ const FooterBar = () => {
                 <Link
                   key={idx}
                   href={item.links}
-                  className="block transition-colors duration-300 hover:text-[#ce1c34]"
+                  className="block transition-colors duration-300 "
                 >
                   {item.title}
                 </Link>
@@ -101,14 +101,14 @@ const FooterBar = () => {
           <Collapse title="Contact Us">
             <div>
               <div className="mt-2 space-y-2">
-                <p className="transition-colors duration-300 hover:text-[#ce1c34]">
-                  Phone no: +8801930631910
+                <p className="transition-colors duration-300 ">
+                  Phone no: +8801811107751
                 </p>
-                <p className="transition-colors duration-300 hover:text-[#ce1c34]">
-                  Email: email@gmail.com
+                <p className="transition-colors duration-300 ">
+                  Email: made.in.bd.apps@gmail.com
                 </p>
-                <p className="transition-colors duration-300 hover:text-[#ce1c34]">
-                  Location: Uthrefra, Dhaka
+                <p className="transition-colors duration-300 ">
+                  Location: Mohakhali DOHS, Dhaka, Bangladesh
                 </p>
               </div>
               <div className="flex items-center pt-4 space-x-4 sm:mt-0">
@@ -129,13 +129,13 @@ const FooterBar = () => {
         {/* Desktop version */}
         <div className="grid-cols-2 gap-5 row-gap-8 lg:col-span-4 md:grid-cols-4 hidden md:grid">
           <div>
-            <p className="font-semibold uppercase tracking-wide text-gray-800">Category</p>
-            <div className="mt-2 space-y-2">
+            <p className="font-bold uppercase tracking-wide text-white">Category</p>
+            <div className="mt-2 space-y-2 font-semibold">
               {FooterLinks.Category.map((item, idx) => (
                 <Link
                   key={idx}
                   href={item.links}
-                  className="block transition-colors duration-300 hover:text-[#ce1c34]"
+                  className="block transition-colors duration-300  text-base"
                 >
                   {item.title}
                 </Link>
@@ -144,13 +144,13 @@ const FooterBar = () => {
           </div>
 
           <div>
-            <p className="font-semibold uppercase tracking-wide text-gray-800">Store</p>
-            <div className="mt-2 space-y-2">
+            <p className="font-bold uppercase tracking-wide text-white">Store</p>
+            <div className="mt-2 space-y-2 font-semibold">
               {FooterLinks.Store.map((item, idx) => (
                 <Link
                   key={idx}
                   href={item.links}
-                  className="block transition-colors duration-300 hover:text-[#ce1c34]"
+                  className="block transition-colors duration-300  text-base"
                 >
                   {item.title}
                 </Link>
@@ -159,13 +159,13 @@ const FooterBar = () => {
           </div>
 
           <div>
-            <p className="font-semibold uppercase tracking-wide text-gray-800">About</p>
-            <div className="mt-2 space-y-2">
+            <p className="font-bold uppercase tracking-wide text-white">About</p>
+            <div className="mt-2 space-y-2 font-semibold">
               {FooterLinks.About.map((item, idx) => (
                 <Link
                   key={idx}
                   href={item.links}
-                  className="block transition-colors duration-300 hover:text-[#ce1c34]"
+                  className="block transition-colors duration-300  text-base"
                 >
                   {item.title}
                 </Link>
@@ -174,16 +174,16 @@ const FooterBar = () => {
           </div>
 
           <div>
-            <p className="font-semibold uppercase tracking-wide text-gray-800">Contact Us</p>
-            <div className="mt-2 space-y-2 text-sm">
-              <p className="transition-colors duration-300 hover:text-[#ce1c34]">
-                Phone no: +8801930631910
+            <p className="font-bold uppercase tracking-wide text-white">Contact Us</p>
+            <div className="mt-2 space-y-2 text-base font-semibold">
+              <p className="transition-colors duration-300 ">
+                Phone no: +8801811107751
               </p>
-              <p className="transition-colors duration-300 hover:text-[#ce1c34]">
-                Email: email@gmail.com
+              <p className="transition-colors duration-300 ">
+                Email: made.in.bd.apps@gmail.com
               </p>
-              <p className="transition-colors duration-300 hover:text-[#ce1c34]">
-                Location: Uthrefra, Dhaka
+              <p className="transition-colors duration-300 ">
+                Location:  Mohakhali DOHS, Dhaka, Bangladesh
               </p>
             </div>
             <div className="flex items-center pt-4 space-x-4 sm:mt-0">
@@ -191,7 +191,7 @@ const FooterBar = () => {
                 <a
                   key={idx}
                   href={item.links}
-                  className={`${item.color} w-8 aspect-square bg-white rounded-full shadow-md flex justify-center items-center`}
+                  className={`${item.color} w-8 aspect-square   flex justify-center items-center`}
                 >
                   {item.icon}
                 </a>

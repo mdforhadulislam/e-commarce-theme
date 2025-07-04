@@ -14,7 +14,7 @@ const config: Config = {
       },
       colors: {
         'defult': '#006a4e',
-        'defult-secondary': '#000000',
+        'defult-secondary': '#ce1c34',
         'defult-button': '#e80d2a',
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',

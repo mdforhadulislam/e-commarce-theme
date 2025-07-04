@@ -22,7 +22,7 @@ export default function RootLayout({
         <ThemProviderContext>
         <main>
           <NavBar />
-          <div className="w-full h-[118px]">
+          <div className="w-full h-[170px] sm:h-[106px] md:h-[114px] lg:h-[118px] transtition-all duration-300 ease-in-out">
 
           </div>
           {children}
