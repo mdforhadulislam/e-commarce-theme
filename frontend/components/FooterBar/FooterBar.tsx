@@ -29,25 +29,25 @@ const FooterLinks = {
   Social: [
     {
       title: 'Facebook',
-      links: 'https://www.facebook.com/dutypedia',
+      links: 'https://www.facebook.com/made.in.bd.apps',
       icon: <Facebook />,
       color: 'text-white'
     },
     {
       title: 'Instagram',
-      links: 'https://www.instagram.com/dutypedia',
+      links: 'https://www.instagram.com/made.in.bd.apps',
       icon: <Instagram />,
       color: 'text-white'
     },
     {
       title: 'Twitter',
-      links: 'https://twitter.com/dutypedia',
+      links: 'https://twitter.com/madeinbdapps',
       icon: <Twitter />,
       color: 'text-white'
     },
     {
       title: 'Linkedin',
-      links: 'https://www.linkedin.com/company/dutypedia',
+      links: 'https://www.linkedin.com/company/made-in-bangladesh-apps',
       icon: <Linkedin />,
       color: 'text-white'
     }
@@ -121,7 +121,7 @@ const FooterBar = () => {
                   <a
                     key={idx}
                     href={item.links}
-                    className={`${item.color} w-8 aspect-square bg-white rounded-full shadow-md flex justify-center items-center`}
+                    className={`${item.color} w-8 aspect-square  rounded-full flex justify-center items-center`}
                   >
                     {item.icon}
                   </a>

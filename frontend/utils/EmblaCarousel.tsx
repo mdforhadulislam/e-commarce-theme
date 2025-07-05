@@ -2,6 +2,7 @@ import React, { useState, useEffect, useCallback } from "react";
 import { EmblaOptionsType } from "embla-carousel";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
+import clsx from "clsx"; // optional but clean
 
 type SlideData = {
   id: number;
@@ -13,28 +14,51 @@ type SlideData = {
 type EmblaCarouselPropType = {
   slides: SlideData[];
   options?: EmblaOptionsType;
+  mainImageClassName?: string;   // allow controlling main image size externally
+  thumbImageClassName?: string;  // allow controlling thumbnail size externally
 };
+
 type ThumbPropType = {
   selected: boolean;
   index: number;
   onClick: () => void;
-  image: string; // add image prop
+  image: string;
+  thumbImageClassName?: string;
 };
 
-export const Thumb: React.FC<ThumbPropType> = ({ selected, index, onClick, image }) => {
+export const Thumb: React.FC<ThumbPropType> = ({
+  selected,
+  index,
+  onClick,
+  image,
+  thumbImageClassName,
+}) => {
   return (
-    <div className="flex-0 w-1/5 sm:w-[15%] px-1">
+    <div className="flex-0 w-1/6 sm:w-[10%] px-1">
       <button
         onClick={onClick}
         type="button"
-        className={`flex items-center justify-center w-full aspect-square rounded overflow-hidden border-2 ${selected ? 'border-red-500' : 'border-gray-300'}`}
+        className={clsx(
+          "flex items-center justify-center w-full aspect-square rounded overflow-hidden border-2",
+          selected ? "border-red-500" : "border-gray-300"
+        )}
       >
-        <img src={image} alt={`Thumbnail ${index + 1}`} className="w-full h-full object-cover" />
+        <img
+          src={image}
+          alt={`Thumbnail ${index + 1}`}
+          className={clsx("w-full h-full object-cover", thumbImageClassName)}
+        />
       </button>
     </div>
   );
 };
-const EmblaCarousel: React.FC<EmblaCarouselPropType> = ({ slides, options }) => {
+
+const EmblaCarousel: React.FC<EmblaCarouselPropType> = ({
+  slides,
+  options,
+  mainImageClassName,
+  thumbImageClassName,
+}) => {
   const [selectedIndex, setSelectedIndex] = useState(0);
 
   const [emblaMainRef, emblaMainApi] = useEmblaCarousel(
@@ -69,12 +93,19 @@ const EmblaCarousel: React.FC<EmblaCarouselPropType> = ({ slides, options }) => 
   }, [emblaMainApi, onSelect]);
 
   return (
-    <div className="max-w-4xl mx-auto">
-      <div className="overflow-hidden" ref={emblaMainRef}>
+    <div className="w-auto h-auto">
+      <div className="overflow-hidden rounded-lg" ref={emblaMainRef}>
         <div className="flex">
           {slides.map((slide) => (
             <div className="flex-[0_0_100%] px-1 relative" key={slide.id}>
-              <img src={slide.image} alt={slide.title} className="w-full h-full object-cover rounded-lg" />
+              <img
+                src={slide.image}
+                alt={slide.title}
+                className={clsx(
+                  "w-full h-full object-cover rounded-lg",
+                  mainImageClassName
+                )}
+              />
               <div className="absolute bottom-4 left-4 bg-black/60 text-white p-2 rounded">
                 <h2 className="text-lg font-semibold">{slide.title}</h2>
                 <p className="text-sm">{slide.description}</p>
@@ -83,15 +114,17 @@ const EmblaCarousel: React.FC<EmblaCarouselPropType> = ({ slides, options }) => 
           ))}
         </div>
       </div>
+
       <div className="mt-2 overflow-hidden" ref={emblaThumbsRef}>
         <div className="flex">
-          {slides.map(({image}, index) => (
+          {slides.map(({ image }, index) => (
             <Thumb
               key={index}
               onClick={() => onThumbClick(index)}
               selected={index === selectedIndex}
               index={index}
               image={image}
+              thumbImageClassName={thumbImageClassName}
             />
           ))}
         </div>
