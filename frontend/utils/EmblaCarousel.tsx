@@ -102,7 +102,7 @@ const EmblaCarousel: React.FC<EmblaCarouselPropType> = ({
                 src={slide.image}
                 alt={slide.title}
                 className={clsx(
-                  "w-full h-full object-cover rounded-lg",
+                  "w-full object-cover rounded-lg",
                   mainImageClassName
                 )}
               />
